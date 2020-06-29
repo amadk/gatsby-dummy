@@ -4,7 +4,15 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-use-dark-mode',
+    {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'chakra-ui-dark',
+        classNameLight: 'chakra-ui-light',
+        storageKey: 'chakra-ui-color-mode',
+        minify: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -15,4 +23,4 @@ module.exports = {
       },
     },
   ],
-};
+}
